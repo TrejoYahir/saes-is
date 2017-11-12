@@ -15,9 +15,9 @@ public class BD {
     public Connection conectar(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String servidor = "jdbc:mysql://localhost:3306/saes";
-            String usuario = "root";
-            String pass = "root";
+            String servidor = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";
+            String usuario = "b0087e4ae1fe04";
+            String pass = "eac1da17";
             conexion = (Connection) DriverManager.getConnection(servidor, usuario, pass);
             System.out.println("Conexion extiosa con la base de datos");
  
