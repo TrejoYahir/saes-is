@@ -2,25 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarProfesor.java</file>
-            <file>file:/home/yahir/Documentos/SAES/web/css/bootstrap.css</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarProfesorG.java</file>
-            <file>file:/home/yahir/Documentos/SAES/web/administrarAHorario.jsp</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarGrupo.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarHorarioAc.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/mysql/Conexion.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarAcademico.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarAcademicoG.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarTHorario.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarAlumnoG.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarMateriaG.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarGrupoG.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarAlumno.java</file>
-            <file>file:/home/yahir/Documentos/SAES/web/editarAcademico.jsp</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarHorario.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarAnalista.java</file>
-            <file>file:/home/yahir/Documentos/SAES/src/java/registro/EditarMateria.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

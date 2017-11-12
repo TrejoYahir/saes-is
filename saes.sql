@@ -1,5 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `saes` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `saes`;
+USE `heroku_06209a6566df5df`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win32 (AMD64)
 --
 -- Host: localhost    Database: saes
