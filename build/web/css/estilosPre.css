@@ -1,0 +1,43 @@
+.fondo{ 
+	background-size: cover; 
+	background-image: url(../img/index/estudiantes2.jpg); 
+	background-position: center center; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size: cover; 
+	height:90vh;
+}
+
+.fondoNav{
+	background: -moz-linear-gradient(top, #0e5f8a, #27a2c1);
+	background: -webkit-linear-gradient(top, #0e5f8a, #27a2c1);
+}
+
+.borde {
+	border-radius: 30px;
+	border-style: solid; 
+	padding: 30px; 
+	background-color: #ffffff; 
+	opacity: 0.9; 
+	filter: alpha(opacity=90);  
+}
+
+.listanav{
+	display: inline; 
+	margin: 0 5% 0 0;
+
+}
+
+.alturacontenido{
+	height: 585px; 
+}
+
+#t{
+	font-weight: bold; 
+	opacity: 1.0; 
+	filter: alpa(opacity=100); 
+}
+
+.acro{
+	color: #fff;
+}

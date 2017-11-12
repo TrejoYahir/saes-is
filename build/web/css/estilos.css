@@ -1,0 +1,53 @@
+body {
+	background: #f2f2f2;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* --- --- ENCABEZADO --- --- */
+.encabezado{
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: -moz-linear-gradient(top, #0e5f8a, #27a2c1);
+	background: -webkit-linear-gradient(top, #0e5f8a, #27a2c1);
+}
+/* --- --- BARRA LATERAL --- --- */
+.barra-lateral {
+	background: #f2f2f2;
+	color: #fff;
+	min-width: 270px;
+	min-height: 100vh;
+	padding: 0;
+	border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.barra-lateral a {
+	color: #000;
+}
+
+/* --- MENU --- */
+.barra-lateral .menu li a{
+	display: block;
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.barra-lateral .menu li a.subitems{
+	padding: 5px;
+}
+.barra-lateral .menu a:hover {
+	background: #bfedf8;
+	text-decoration: none;
+}
+.menulista{
+	list-style: none;
+}
+
+.main{
+	min-height: 100vh;
+}
+
+.oculto{
+    display: none;
+}
