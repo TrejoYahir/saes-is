@@ -134,6 +134,10 @@
                                 <input type="text" value="<%=contra%>" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$" name="contra" required class="form-control" />
                                 <small class="form-text text-muted">Entre 6 y 20 caracteres, una letra mayúscula, una letra minúscula y un número</small>
                         </div>
+                        <div>
+                            <input type="text" value="<%=numemp%>" style="visibility: hidden" name="numeroAnterior" />
+                            <input type="text" value="<%=Mail%>" style="visibility: hidden" name="correoAnterior" />
+                        </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <a href="administrarAcademico.jsp"><button type="button" class="btn btn-primary">Regresar</button></a>
                     </form>

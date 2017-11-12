@@ -83,15 +83,18 @@
 						<form action="ServletRegistro" method="post" class="">
 							<div class="form-group row" >
 								<label class="col-4 col-form-label" for="idMateria" >Identificador de la materia</label>
-								<input required="requiered" type="text" class="col-8 form-control" name="idMateria"  placeholder="CXYZ">
+                                                                <input required="requiered" type="text" class="col-8 form-control" name="idMateria" placeholder="CXYZ"
+                                                                       pattern="^C[\d][\d][\d]" >
 							</div>
 							<div class="form-group row" >
 								<label class="col-4 col-form-label" for="NomMateria" >Nombre de la materia</label>
-								<input required="requiered" type="text" class="col-8 form-control" name="NomMateria"  placeholder="Nombre Materia">
+								<input required="requiered" type="text" class="col-8 form-control" name="NomMateria"  placeholder="Nombre Materia"
+                                                                       pattern="[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñ\s]+" >
 							</div>
 							<div class="form-group row" >
 								<label class="col-4 col-form-label" for="Creditos" >Créditos de la materia</label>
-								<input required="requiered" type="text" class="col-8 form-control" name="Creditos"  placeholder="Número decimal">
+								<input required="requiered" type="text" class="col-8 form-control" name="Creditos"  placeholder="Número decimal"
+                                                                        pattern="[0-9]+\.[0-9][0-9]" >
 							</div>
 							<div class="form-group row" >
 								<label class="col-4 col-form-label" for="Nivel" >Nivel de la materia</label>
@@ -153,6 +156,9 @@
                     out.println("alert('Datos registrados correctamente');");
                 }else if(resultado.equals("false")){
                     out.println("alert('Datos registrados no correctamente');");
+                }
+                else if(resultado.equals("repetido")){
+                    out.println("alert('La materia que tratas de registrar ya existe en el sistema');");
                 }
             %>
         </script> 

@@ -120,7 +120,11 @@
                     out.println("alert('Datos registrados correctamente');");
                 }else if(resultado.equals("false")){
                     out.println("alert('Datos registrados no correctamente');");
-                }
+                }else if(resultado.equals("Rantes")){
+                    out.println("alert('El grupo ya ha sido registrado, por favor ingrese otro valor');");
+                    
+                } 
+                
             %>
         </script>
 </body>

@@ -102,7 +102,7 @@
                             String message = (String)session.getAttribute("message");
                         %>
                         <% if (message!=null){session.removeAttribute("message");%><div class="alert alert-success my-0"><%=message%></div><%}%>
-                    </div>                    
+                    </div>  
                     <form class="p-3" style="max-width: 400px;" action="EditarProfesorG" method="post">
                         <input type="hidden" value="<%=id%>" name="id" />
                         <div class="form-group">
@@ -131,8 +131,12 @@
                                 <input type="text" value="<%=contra%>" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$" name="contra" required class="form-control" />
                                 <small class="form-text text-muted">Entre 6 y 20 caracteres, una letra mayúscula, una letra minúscula y un número</small>
                         </div>
+                        <div>
+                            <input type="text" value="<%=numemp%>" style="visibility: hidden" name="numeroAnterior" />
+                            <input type="text" value="<%=Mail%>" style="visibility: hidden" name="correoAnterior" />
+                        </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="administrarProfesorG.jsp"><button type="button" class="btn btn-primary">Regresar</button></a>
+                        <a href="administrarProfesorG.jsp"><button type="button" class="btn btn-primary">Regresar</button></a> 
                     </form>
                     <%
                         }else{
