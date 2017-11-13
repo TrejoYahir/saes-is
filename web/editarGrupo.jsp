@@ -123,6 +123,19 @@
                                 <label class="col-4 col-form-label" for="Numero" >Número del grupo</label>
                                 <input required="requiered" value="<%=numero%>" type="number" min="1" max="15" class="col-8 form-control" name="Numero"  placeholder="Número entero">
                         </div>
+                        <div style="visibility: hidden">
+                            <select name="turnoAnt">
+                                <option values="Matutino" <%if(turno.equals("Matutino")){%>selected<%}%>>Matutino</option>
+                                <option value="Vespertino"<%if(turno.equals("Vespertino")){%>selected<%}%> >Vespertino</option>
+                            </select>
+                            <select name="nivelAnt">
+                                        <option value="1"<%if(nivel==1){%>selected<%}%>>1</option>
+                                        <option value="2"<%if(nivel==2){%>selected<%}%>>2</option>
+                                        <option value="3"<%if(nivel==3){%>selected<%}%>>3</option>
+                                        <option value="4"<%if(nivel==4){%>selected<%}%>>4</option>
+                            </select>
+                            <input value="<%=numero%>" type="number" name="numeroAnt" />
+                        </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <a href="administrarGrupo.jsp"><button type="button" class="btn btn-primary">Regresar</button></a>
                     </form>
