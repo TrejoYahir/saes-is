@@ -1,0 +1,17 @@
+use heroku_06209a6566df5df;
+DROP TABLE heroku_06209a6566df5df.alumno;
+DROP TABLE heroku_06209a6566df5df.alumno_has_clase;
+DROP TABLE heroku_06209a6566df5df.alumno_quiere_clase;
+DROP TABLE heroku_06209a6566df5df.area_materias;
+DROP TABLE heroku_06209a6566df5df.cita_reinscripcion;
+DROP TABLE heroku_06209a6566df5df.clase;
+DROP TABLE heroku_06209a6566df5df.forma_evaluacion;
+DROP TABLE heroku_06209a6566df5df.gestion;
+DROP TABLE heroku_06209a6566df5df.grupo;
+DROP TABLE heroku_06209a6566df5df.horas;
+DROP TABLE heroku_06209a6566df5df.kardex;
+DROP TABLE heroku_06209a6566df5df.materias;
+DROP TABLE heroku_06209a6566df5df.profesor;
+DROP TABLE heroku_06209a6566df5df.tipo_horario;
+DROP TABLE heroku_06209a6566df5df.tipo_horario_has_horas;
+DROP TABLE heroku_06209a6566df5df.usuario;
