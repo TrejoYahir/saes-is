@@ -184,6 +184,14 @@
         <servlet-name>ReinscribirG</servlet-name>
         <servlet-class>reinscripcion.ReinscribirG</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RecuperarContrasena</servlet-name>
+        <servlet-class>registro.RecuperarContrasena</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecuperarContrasena2</servlet-name>
+        <servlet-class>registro.RecuperarContrasena2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login2</servlet-name>
         <url-pattern>/Login2</url-pattern>
@@ -367,6 +375,14 @@
     <servlet-mapping>
         <servlet-name>ReinscribirG</servlet-name>
         <url-pattern>/ReinscribirG</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecuperarContrasena</servlet-name>
+        <url-pattern>/RecuperarContrasena</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecuperarContrasena2</servlet-name>
+        <url-pattern>/RecuperarContrasena2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
