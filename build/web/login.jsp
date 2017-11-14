@@ -50,6 +50,9 @@
 				<div class="form-group row justify-content-center" id="t">
 					<button type="submit" class="btn btn-primary ">Entrar</button>
 				</div>
+                            <div class="form-group row justify-content-center mb-0">
+                                <a href="reestablecerContrasena.jsp" class="text-center">Reestablecer contraseña</a>
+                            </div>
 			</form>
 		</div>
 	</div>

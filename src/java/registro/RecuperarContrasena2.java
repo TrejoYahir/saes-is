@@ -10,18 +10,18 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import mysql.Conexion;
 
 /**
  *
  * @author Alberto
  */
-public class BorrarHora extends HttpServlet {
+public class RecuperarContrasena2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,27 +37,60 @@ public class BorrarHora extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String tipohorario=request.getParameter("idtipo_horario");
-            String idhorario=request.getParameter("idhorario");
+            request.setCharacterEncoding("UTF-8");
             Conexion cx=new Conexion();
             Connection con=cx.MySQLConnect();
-            PreparedStatement ps=null;
-            ResultSet rs=null;
+            String ncontra=request.getParameter("contraNueva");
+            String usuario=request.getParameter("idusuario");
+            String idUsuario="";
+            boolean rfc=false,boleta=false;
+            if(usuario.length()==10){
+                boleta=true;
+            }else{
+                rfc=true;
+            }
             try {
-                ps=con.prepareStatement("select count(*) from horas, tipo_horario_has_horas, tipo_horario where horas.idhorario = tipo_horario_has_horas.horas_idhorario and tipo_horario_has_horas.tipo_horario_idtipo_horario = tipo_horario.idtipo_horario and tipo_horario.idtipo_horario=?");
-                ps.setString(1,tipohorario);
-                rs = ps.executeQuery();
-            if(rs.next()){
-                if(rs.getInt(1)==1){
-                    out.println("<script>alert('El horario no puede quedar vacío'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
+                if(boleta){
+                    PreparedStatement ps=con.prepareStatement("select usuario_idusuario from alumno where boleta=?");
+                    ps.setString(1,usuario);
+                    ResultSet rs=ps.executeQuery();
+                    while(rs.next()){
+                        idUsuario=rs.getString("usuario_idusuario");
+                    }
+                    ps=con.prepareStatement("update usuario set contra=? where idusuario=?");
+                    ps.setString(1, ncontra);
+                    ps.setString(2, idUsuario);
+                    ps.executeUpdate();
+                    out.println("<script>alert('Se actualizaron los datos correctamente'); location='login.jsp';</script>");
                 }else{
-                    ps=con.prepareStatement("delete from tipo_horario_has_horas where tipo_horario_idtipo_horario=? and horas_idhorario=?");
-                ps.setString(1, tipohorario);
-                ps.setString(2, idhorario);
-                ps.executeUpdate();
-                out.println("<script>alert('Hora borrada correctamente'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
+                    PreparedStatement ps=con.prepareStatement("select usuario_idusuario from academico where rfc=?");
+                    ps.setString(1,usuario);
+                    ResultSet rs=ps.executeQuery();
+                    if(rs.next()){
+                        rs.previous();
+                        while(rs.next()){
+                            idUsuario=rs.getString("usuario_idusuario");
+                        }
+                        ps=con.prepareStatement("update usuario set contra=? where idusuario=?");
+                        ps.setString(1, ncontra);
+                        ps.setString(2, idUsuario);
+                        ps.executeUpdate();
+                        out.println("<script>alert('Se actualizaron los datos correctamente'); location='login.jsp';</script>");
+                    }else{
+                         PreparedStatement ps2=con.prepareStatement("select usuario_idusuario from gestion where rfc=?");
+                        ps.setString(1,usuario);
+                        ResultSet rs2=ps.executeQuery();
+                        while(rs.next()){
+                            idUsuario=rs.getString("usuario_idusuario");
+                        }
+                        ps=con.prepareStatement("update usuario set contra=? where idusuario=?");
+                        ps.setString(1, ncontra);
+                        ps.setString(2, idUsuario);
+                        ps.executeUpdate();
+                        out.println("<script>alert('Se actualizaron los datos correctamente'); location='login.jsp';</script>");
+                    }
                 }
-            }         
+                    
                 
             } catch (Exception e) {
                 e.printStackTrace();

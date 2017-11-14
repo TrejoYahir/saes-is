@@ -216,3 +216,17 @@ function validarConfirmarAc(){
         return false;
     }
 }
+
+/*---------------reestablecer----------------*/
+function validarRC(){
+    console.info("Entro a validarConfirmar");
+    var contra1=$("#contra1").val();
+    var contra2=$("#contra2").val();
+    console.info(contra1+" "+contra2);
+    if(contra1==contra2){
+        return true;
+    }else{
+        alert("Las contraseñas no coinciden");
+        return false;
+    }
+}
