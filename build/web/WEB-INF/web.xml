@@ -57,6 +57,14 @@
         <servlet-class>registro.EditarGrupo</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>RecuperarContrasena</servlet-name>
+        <servlet-class>registro.RecuperarContrasena</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecuperarContrasena2</servlet-name>
+        <servlet-class>registro.RecuperarContrasena2</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>BuscarClaseR</servlet-name>
         <servlet-class>reinscripcion.BuscarClaseR</servlet-class>
     </servlet>
@@ -239,6 +247,14 @@
     <servlet-mapping>
         <servlet-name>EditarGrupo</servlet-name>
         <url-pattern>/EditarGrupo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecuperarContrasena</servlet-name>
+        <url-pattern>/RecuperarContrasena</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecuperarContrasena2</servlet-name>
+        <url-pattern>/RecuperarContrasena2</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BuscarClaseR</servlet-name>
