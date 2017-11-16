@@ -55,7 +55,7 @@ public class CrearHorario extends HttpServlet {
                     ps.executeUpdate();
 //                    out.println("<p>id materia: "+materias.get(i)+"</p>");
                 }
-                out.println("<script>alert('Se ha registrado el horario correctamente'); location='crearHorario.jsp';</script>");
+                out.println("<script>alert('Se agregó correctamente el tipo de horario'); location='crearHorario.jsp';</script>");
 //                out.println("<!DOCTYPE html>");
 //                out.println("<html>");
 //                out.println("<head>");

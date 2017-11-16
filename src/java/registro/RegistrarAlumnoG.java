@@ -58,7 +58,7 @@ public class RegistrarAlumnoG extends HttpServlet {
             if(regcorreo&regnum)
                 out.println("<script>alert('"+mensaje+"');location='registrarAlumno.jsp';</script>");
             if(regcorreo&!regnum)
-                       out.println("<script>alert('El número de boleta ya fue asignado a otro usuario');location='registrarAlumnoG.jsp';</script>");
+                       out.println("<script>alert('Lo sentimos, el número de boleta ya fue asignado a otro alumno');location='registrarAlumnoG.jsp';</script>");
             if(!regcorreo&regnum)
                        out.println("<script>alert('El correo está registrado en otra cuenta');location='registrarAlumnoG.jsp';</script>");
             if(!regcorreo&!regnum)

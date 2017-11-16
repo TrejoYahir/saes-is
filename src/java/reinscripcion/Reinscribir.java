@@ -53,7 +53,7 @@ public class Reinscribir extends HttpServlet {
                     ps.executeUpdate();
 //                    out.println("<p>id materia: "+materias.get(i)+"</p>");
                 }
-                out.println("<script>alert('Se completo con exito la reinscripcion'); location='horarioActual.jsp';</script>");
+                out.println("<script>alert('Se concluyó la inscripción correctamente'); location='horarioActual.jsp';</script>");
 //                out.println("<!DOCTYPE html>");
 //                out.println("<html>");
 //                out.println("<head>");

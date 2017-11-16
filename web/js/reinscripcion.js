@@ -19,6 +19,21 @@ $(document).ready(function () {
     
 });
 
+function confirmar(){
+    if(validar()){
+        if(confirm("¿Estás seguro que quieres finalizar tu inscripción?")){
+            console.info("Termine inscripcion");
+            return true;
+        }else{
+            console.info("No termine inscripcion");
+            location="reinscripcion.jsp";
+            return false;
+        }
+    }else{
+        return false;
+    }
+}
+
 function agregar(boton){
     var padre=$(boton).parent().parent();
 //    var input=$(padre).find("input.clase");
@@ -178,7 +193,6 @@ function agregarHorario(idUsuario,nombreHorario){
             
         },
         success:  function (response) {
-            alert("response "+response);
             $(response).appendTo("#tablaHorario");
             actualizarNombres();
         },

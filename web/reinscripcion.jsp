@@ -120,7 +120,7 @@
                                                             
                                                         </div>
                                                         <h2 class="text-center">Tu Horario</h2>
-                                                        <form action="Reinscribir" onsubmit="return validar()">
+                                                        <form action="Reinscribir" onsubmit="return confirmar()">
                                                             <table class="table table-hover tablehorario" id="tablaHorario">
                                                                 <thead class="thead-inverse">
                                                                     <th>Grupo</th>

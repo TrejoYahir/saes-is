@@ -141,7 +141,7 @@ function validarNombre(){
     for (var i = 0; i < len-1; i++) {
         var nombre=$(clase[i+1]).children(".nombreMateria").html();
         if(repiteNombre(nombre,nombreMaterias)){
-            alert("Ya has agregado una materia con el mismo nombre");
+            alert("No puedes inscribir 2 veces la misma materia.");
             return false;
         }else{
             nombreMaterias.push(nombre);
