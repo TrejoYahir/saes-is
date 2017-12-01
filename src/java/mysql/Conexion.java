@@ -15,9 +15,9 @@ public class Conexion {
             /*String servidor = "jdbc:mysql://localhost:3306/saes";
             String usuario = "root";
             String pass = "root";*/
-            String servidor = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";
-            String usuario = "b0087e4ae1fe04";
-            String pass = "eac1da17";
+            String servidor = "jdbc:mysql://sillymatter.com:3306/sillymat_test";
+            String usuario = "sillymat_yahir";
+            String pass = "sillymat1";
             //Se inicia la conexión
             conexion = DriverManager.getConnection(servidor, usuario, pass);
  
