@@ -7,10 +7,6 @@
 <%@page import="mysql.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%! String driverName = "com.mysql.jdbc.Driver";%>
-        <%!String url = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";%>
-        <%!String user = "b0087e4ae1fe04";%>
-        <%!String psw = "eac1da17";%>
 <!DOCTYPE html>
 <%
     String nombreUsuario=(String)session.getAttribute("nombreUsuario");
@@ -132,6 +128,8 @@
                                                                     while(rs.next()){
                                                                         out.println("<option  selected value='"+rs.getString("idtipo_horario")+"'>"+rs.getString("idtipo_horario")+"</option>");
                                                                     }
+                                                                    con.close();
+                                                                                cx.cerrar();
                                                                     %>
 								</select>
 							</div>

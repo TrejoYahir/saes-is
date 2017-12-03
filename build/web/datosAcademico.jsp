@@ -103,6 +103,10 @@
 						</table>
 					</div>
 				</div>
+                                <%
+                                con.close();
+                                                                                cx.cerrar();
+                                %>
 			</main>
 		</div>
 	</div>	

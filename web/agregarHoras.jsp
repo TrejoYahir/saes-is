@@ -120,6 +120,8 @@
                                                     }else{
                                                         %><p>No se encontraron registros</p><%
                                                     }
+                                                    con.close();
+                                                                                cx.cerrar();
                                                 } catch (Exception e) {
                                                     e.printStackTrace();
                                                 }

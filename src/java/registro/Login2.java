@@ -52,12 +52,16 @@ public class Login2 extends HttpServlet {
                             session.setAttribute("idUsuario",boleta);
                             resultado.close();
                             resultado2.close();
+                            con.close();
+                            cx.cerrar();
                             response.sendRedirect("estadoActual.jsp");
                         }else{
                             String error="1";
                             session.setAttribute("error",error);
                             resultado.close();
                             resultado2.close();
+                            con.close();
+                            cx.cerrar();
                             response.sendRedirect("login.jsp");
                         }
                     }
@@ -66,6 +70,8 @@ public class Login2 extends HttpServlet {
                     String error="1";
                     session.setAttribute("error",error);
                     resultado.close();
+                    con.close();
+                    cx.cerrar();
                     response.sendRedirect("login.jsp");
                 }
             }catch(SQLException ex){
@@ -99,6 +105,8 @@ public class Login2 extends HttpServlet {
                                 session.setAttribute("idUsuario",rfc);
                                 resultado.close();
                                 resultado2.close();
+                                con.close();
+                                cx.cerrar();
                                 response.sendRedirect("datosPersonalesJG.jsp");
                             }else{
                                 if(nivel.equals("2")){
@@ -107,6 +115,8 @@ public class Login2 extends HttpServlet {
                                     session.setAttribute("idUsuario",rfc);
                                     resultado.close();
                                     resultado2.close();
+                                    con.close();
+                                    cx.cerrar();
                                     response.sendRedirect("datosGestion.jsp");
                                 }
                             }
@@ -115,6 +125,8 @@ public class Login2 extends HttpServlet {
                             session.setAttribute("error",error);
                             resultado.close();
                             resultado2.close();
+                            con.close();
+                            cx.cerrar();
                             response.sendRedirect("login.jsp");
                         }
                     }
@@ -138,12 +150,16 @@ public class Login2 extends HttpServlet {
                                 session.setAttribute("idUsuario",rfc);
                                 resultado.close();
                                 resultado2.close();
+                                con.close();
+                                cx.cerrar();
                                 response.sendRedirect("datosAcademico.jsp");
                             }else{
                                 String error="1";
                                 session.setAttribute("error",error);
                                 resultado.close();
                                 resultado2.close();
+                                con.close();
+                                cx.cerrar();
                                 response.sendRedirect("login.jsp");
                             }
                         }
@@ -154,6 +170,8 @@ public class Login2 extends HttpServlet {
                         String error="1";
                         session.setAttribute("error",error);
                         resultado.close();
+                        con.close();
+                        cx.cerrar();
                         response.sendRedirect("login.jsp");
                     }
                 }

@@ -60,13 +60,14 @@ public class EditarHorario extends HttpServlet {
                     ps.setString(4, horario);
                     ps.setInt(5, idclase);
                     ps.executeUpdate();
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('Se actualizaron los datos correctamente.'); location='editarHorario.jsp?idClase="+idclase+"';</script>");
                 }else{
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>location='editarHorario.jsp?idClase="+idclase+"';</script>");
                 }
-                
-                
-                
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -162,6 +163,8 @@ public class EditarHorario extends HttpServlet {
                 valido=false;
                 }
             }
+            con.close();
+            cx.cerrar();
         } catch (Exception e) {
             e.printStackTrace();
         }

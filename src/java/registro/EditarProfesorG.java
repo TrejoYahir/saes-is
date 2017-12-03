@@ -135,6 +135,7 @@ public void existe() throws SQLException{
         }
         st.close();
         conn.close();
+        cx.cerrar();
     }catch (Exception e){
         System.err.println("Got an exception! ");
         System.err.println(e.getMessage());
@@ -161,6 +162,7 @@ public void existe() throws SQLException{
           mensaje="Se actualizaron los datos correctamente.";
           preparedStmt.close();
           conn.close();
+          cx.cerrar();
         }catch (Exception e){
           System.err.println("Got an exception!");
           System.err.println(e.getMessage());

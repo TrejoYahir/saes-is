@@ -48,6 +48,8 @@ public class BorrarClaseAlG extends HttpServlet {
                 ps=con.prepareStatement("update clase set cupo=cupo+1 where idclase=?");
                 ps.setString(1, idclase);
                 ps.executeUpdate();
+                con.close();
+                cx.cerrar();
                 out.println("<script>alert('Clase dada de baja correctamente'); location='editarHorarioAlumnoG.jsp?id="+idalumno+"'</script>");
             } catch (Exception e) {
                 e.printStackTrace();

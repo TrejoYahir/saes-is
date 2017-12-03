@@ -112,6 +112,10 @@
 							</tr>
 						</table>
 					</div>
+                                                        <%
+                                                        con.close();
+                                                                                cx.cerrar();
+                                                        %>
 				</div>
 			</main>
 		</div>

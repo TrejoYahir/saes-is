@@ -55,6 +55,8 @@ public class ConsultarContraAn extends HttpServlet {
                     contra=rs.getString("contra");
                 }
                 out.print(contra);
+                con.close();
+                cx.cerrar();
             } catch (Exception e) {
                 e.printStackTrace();
             }

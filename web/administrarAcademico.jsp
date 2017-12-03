@@ -23,10 +23,6 @@
         <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-<%! String driverName = "com.mysql.jdbc.Driver";%>
-        <%!String url = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";%>
-        <%!String user = "b0087e4ae1fe04";%>
-        <%!String psw = "eac1da17";%>
         <%
             String keyword = "";
             String select = "";
@@ -149,6 +145,8 @@
                         <p>No se encontraron resultados</p>
                          <%
                             }
+                            con.close();
+                            cx.cerrar();
                             } catch (SQLException sqe) {
                                 out.println(sqe);
                             }

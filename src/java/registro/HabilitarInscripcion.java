@@ -126,8 +126,12 @@ public class HabilitarInscripcion extends HttpServlet {
                         ps2.setString(3, alumno);
                         ps2.executeUpdate();
                     }
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('Se generaron todas las citas de inscripción correctamente.');location='gestionarPeriodos.jsp';</script>");
                 }else{
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('No se generaron todas las citas de inscripción.');location='gestionarPeriodos.jsp';</script>");   
                 }
             } catch (Exception e) {

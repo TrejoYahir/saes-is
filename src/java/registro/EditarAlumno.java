@@ -105,6 +105,7 @@ public void existe() throws SQLException{
         }
         st.close();
         conn.close();
+        cx.cerrar();
     }catch (Exception e){
         System.err.println("Got an exception!1 "+idaca);
         System.err.println(e.getMessage());
@@ -135,6 +136,7 @@ public void existe() throws SQLException{
           preparedStmt.close();
           stm1.close();
           conn.close();
+          cx.cerrar();
         }catch (Exception e){
           System.err.println("Got an exception!2 "+idaca);
           System.err.println(e.getMessage());

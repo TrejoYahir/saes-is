@@ -11,13 +11,12 @@ public class Conexion {
         try {
             //Driver JDBC
             Class.forName("com.mysql.jdbc.Driver");
-            //Nombre del servidor. localhost:3306 es la ruta y el puerto de la conexión MySQL
-            /*String servidor = "jdbc:mysql://localhost:3306/saes";
-            String usuario = "root";
-            String pass = "root";*/
             String servidor = "jdbc:mysql://awsaes.cmfchautbgi7.us-east-1.rds.amazonaws.com/saes";
             String usuario = "aws_saes";
             String pass = "aws_pass";
+//            String servidor = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";
+//            String usuario = "b0087e4ae1fe04";
+//            String pass = "eac1da17";
             //Se inicia la conexión
             conexion = DriverManager.getConnection(servidor, usuario, pass);
  
@@ -35,5 +34,11 @@ public class Conexion {
             return conexion;
         }
     }
-    
+    public void cerrar(){
+        try {
+            conexion.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error sql al conectrar con la base de datos: " + ex.getMessage(), JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

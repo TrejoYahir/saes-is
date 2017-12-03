@@ -62,6 +62,8 @@ public class ValidarTHorario extends HttpServlet {
                 }
                 rs.close();
                 ps.close();
+                con.close();
+                cx.cerrar();
             } catch (Exception e) {
             }
         }

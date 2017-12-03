@@ -53,6 +53,8 @@ public class CambiarContraAc extends HttpServlet {
                 ps.setString(1, ncontra);
                 ps.setString(2, idUsuario);
                 ps.executeUpdate();
+                con.close();
+                cx.cerrar();
                 out.println("<script>alert('Se actualizaron los datos correctamente'); location='login.jsp';</script>");
             } catch (Exception e) {
                 e.printStackTrace();

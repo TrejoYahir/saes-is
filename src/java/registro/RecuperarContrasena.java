@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.servlet.ServletException;
@@ -73,13 +75,18 @@ public class RecuperarContrasena extends HttpServlet {
                         }
                     }
                 }
-                
             } catch (Exception e) {
                 e.printStackTrace();
             }
             if(existe){
                 System.out.println("Encontrado");
                 enviarCorreo(correo,idusuario);
+                try {
+                    con.close();
+                    cx.cerrar();
+                } catch (SQLException ex) {
+                    Logger.getLogger(RecuperarContrasena.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 out.println("<script>alert('Se ha enviado un correo para la restauración de la contraseña al correo asociado con la cuenta.'); location='index.html';</script>");
             }else{
                 System.out.println("No encontrado");

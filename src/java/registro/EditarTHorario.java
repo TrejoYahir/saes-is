@@ -57,7 +57,9 @@ public class EditarTHorario extends HttpServlet {
                 ps.setString(1, tipohorario);
                 ps.setString(2, idhorario);
                 ps.executeUpdate();
-                out.println("<script>alert('Se actualizaron los datos correctamente.'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
+                con.close();
+                cx.cerrar();
+                out.println("<script>alert('Se actualizaron los datos correctamente.'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");                
             } catch (Exception e) {
                 e.printStackTrace();
             }

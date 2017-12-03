@@ -156,6 +156,8 @@ public class AgregarHorarioGuardado extends HttpServlet {
                     jueves=false;
                     viernes=false;
                 }
+                con.close();
+                cx.cerrar();
             } catch (Exception e) {
                 e.printStackTrace();
             }

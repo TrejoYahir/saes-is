@@ -47,18 +47,21 @@ public class BorrarHora extends HttpServlet {
                 ps=con.prepareStatement("select count(*) from horas, tipo_horario_has_horas, tipo_horario where horas.idhorario = tipo_horario_has_horas.horas_idhorario and tipo_horario_has_horas.tipo_horario_idtipo_horario = tipo_horario.idtipo_horario and tipo_horario.idtipo_horario=?");
                 ps.setString(1,tipohorario);
                 rs = ps.executeQuery();
-            if(rs.next()){
-                if(rs.getInt(1)==1){
-                    out.println("<script>alert('El horario no puede quedar vacío'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
-                }else{
-                    ps=con.prepareStatement("delete from tipo_horario_has_horas where tipo_horario_idtipo_horario=? and horas_idhorario=?");
-                ps.setString(1, tipohorario);
-                ps.setString(2, idhorario);
-                ps.executeUpdate();
-                out.println("<script>alert('Hora borrada correctamente'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
-                }
-            }         
-                
+                if(rs.next()){
+                    if(rs.getInt(1)==1){
+                        con.close();
+                        cx.cerrar();
+                        out.println("<script>alert('El horario no puede quedar vacío'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
+                    }else{
+                        ps=con.prepareStatement("delete from tipo_horario_has_horas where tipo_horario_idtipo_horario=? and horas_idhorario=?");
+                    ps.setString(1, tipohorario);
+                    ps.setString(2, idhorario);
+                    ps.executeUpdate();
+                    con.close();
+                    cx.cerrar();
+                    out.println("<script>alert('Hora borrada correctamente'); location='editarTHorarioG.jsp?idtipo_horario="+tipohorario+"'</script>");
+                    }
+                }  
             } catch (Exception e) {
                 e.printStackTrace();
             }

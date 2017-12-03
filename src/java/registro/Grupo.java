@@ -39,6 +39,7 @@ public class Grupo {
                 agregado="true";
                 ps.close();
             }
+            con.close();
             bd.cerrar();
         }catch(Exception e){
              e.printStackTrace();
@@ -67,8 +68,9 @@ public class Grupo {
                         break;
                     }
                 }
-                
             }
+            c.close();
+            bd.cerrar();
         }catch(Exception e){
             e.printStackTrace();
         }

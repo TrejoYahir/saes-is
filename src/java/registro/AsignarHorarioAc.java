@@ -48,13 +48,14 @@ public class AsignarHorarioAc extends HttpServlet {
                     ps.setString(4, horario);
                     ps.setString(5, cupo);
                     ps.executeUpdate();
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('Se ha registrado el horario correctamente'); location='asignarHorarioAc.jsp';</script>");
                 }else{
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>location='asignarHorarioAc.jsp';</script>");
                 }
-                
-                
-                
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -144,6 +145,8 @@ public class AsignarHorarioAc extends HttpServlet {
                 out.println("<script>alert('El horario no está disponible, seleccione otro');</script>");
                 valido=false;
             }
+            con.close();
+            cx.cerrar();
         } catch (Exception e) {
             e.printStackTrace();
         }

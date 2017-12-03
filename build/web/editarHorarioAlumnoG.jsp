@@ -24,10 +24,6 @@
         <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-        <%
-            
-        %>
-
         <div class="container-fluid">
             <div class="row justify-content-between encabezado">
                 <div class="col-3 my-2">
@@ -439,6 +435,8 @@
                                                                     viernes=false;
                                                                 }
                                                                 }
+                                                                con.close();
+                                                                                cx.cerrar();
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
                                                             }

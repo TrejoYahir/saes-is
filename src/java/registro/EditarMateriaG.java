@@ -51,23 +51,13 @@ public class EditarMateriaG extends HttpServlet {
                         " WHERE idMaterias = '" + id + "'";
            stmt.executeUpdate(sql);
            session.setAttribute("message","Se actualizaron los datos correctamente.");
+           conn.close();
+           cx.cerrar();
            response.sendRedirect("editarMateriaG.jsp?id="+id);
         }catch(SQLException se){
            se.printStackTrace();
         }catch(Exception e){
            e.printStackTrace();
-        }finally{
-           try{
-              if(stmt!=null)
-                 conn.close();
-           }catch(SQLException se){
-           }
-           try{
-              if(conn!=null)
-                 conn.close();
-           }catch(SQLException se){
-              se.printStackTrace();
-           }
         }
      }
 

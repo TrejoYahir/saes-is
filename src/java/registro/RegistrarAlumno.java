@@ -120,6 +120,7 @@ public void existe() throws SQLException{
         }
         st.close();
         conn.close();
+        cx.cerrar();
     }catch (Exception e){
         System.err.println("Got an exception! "+idaca);
         System.err.println(e.getMessage());
@@ -162,6 +163,7 @@ public void existe() throws SQLException{
           mensaje="El alumno se registró exitosamente";
           preparedStmt.close();
           conn.close();
+          cx.cerrar();
         }catch (Exception e){
           System.err.println("Got an exception!2 "+idaca);
           System.err.println(e.getMessage());

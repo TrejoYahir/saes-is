@@ -134,6 +134,8 @@
                     <p>ID de materia inválido</p>
                      <%
                         }
+                        con.close();
+                                                                                cx.cerrar();
                         } catch (SQLException sqe) {
                             out.println(sqe);
                         }

@@ -213,7 +213,7 @@
                                                                      %>
                                                                     
                                                                 <%   
-                                                                    
+                                                                    conDH.close();
                                                                     }catch(Exception ea){out.print("Interno "+ea);}
                                                                   %>   
                                                                 
@@ -234,8 +234,11 @@
 							</tbody>
                                                         
 						</table>
-                                                <%   }//else de materias     
+                                                <%   }//else de materias
+                                                    con.close();
+                                                                                cx.cerrar();
                                                   }catch(Exception e){out.print("General "+e.getMessage());}
+                                                 
                                                         //finally{psh.close(); con.close(); }
                                                      %>
 					</div>

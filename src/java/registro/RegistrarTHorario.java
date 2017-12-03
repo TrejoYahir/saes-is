@@ -45,6 +45,8 @@ public class RegistrarTHorario extends HttpServlet {
                 ps=con.prepareStatement("insert into tipo_horario values(?)");
                 ps.setString(1,tipohorario);
                 ps.executeUpdate();
+                con.close();
+                cx.cerrar();
                 out.println("<script>alert('Se agregó correctamente el tipo de horario'); location='agregarHoras.jsp?idtipo_horario="+tipohorario+"'</script>");
             } catch (Exception e) {
                 e.printStackTrace();

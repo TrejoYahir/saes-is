@@ -48,8 +48,12 @@ public class AsignarHorario extends HttpServlet {
                     ps.setString(4, horario);
                     ps.setString(5, cupo);
                     ps.executeUpdate();
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('Se ha registrado el horario correctamente'); location='asignarHorario.jsp';</script>");
                 }else{
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>location='asignarHorario.jsp';</script>");
                 }
                 
@@ -144,6 +148,8 @@ public class AsignarHorario extends HttpServlet {
                 out.println("<script>alert('El horario no está disponible, seleccione otro');</script>");
                 valido=false;
             }
+            con.close();
+            cx.cerrar();
         } catch (Exception e) {
             e.printStackTrace();
         }

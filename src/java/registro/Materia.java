@@ -48,6 +48,7 @@ public class Materia {
                 agregado="true";
                 ps.close();
             }
+            con.close();
             bd.cerrar();
            } catch (SQLException e) {
             agregado="false";
@@ -73,6 +74,7 @@ public class Materia {
                     String cve = rs.getString("idMaterias");
                     claves.add(cve);
                 }
+                con.close();
                 bd.cerrar();
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -104,6 +106,7 @@ public class Materia {
                 }
                     
             }
+            con.close();
             bd.cerrar();
            } catch (SQLException e) {
             e.printStackTrace();

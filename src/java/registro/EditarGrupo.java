@@ -82,7 +82,10 @@ public class EditarGrupo extends HttpServlet {
             }
             }
         }
+            conn.close();
+            cx.cerrar();
         }catch (Exception e) {
+            e.printStackTrace();
         }
         try{
           Conexion cx=new Conexion();
@@ -101,6 +104,7 @@ public class EditarGrupo extends HttpServlet {
          
           preparedStmt.close();
           conn.close();
+          cx.cerrar();
         }catch (Exception e){
           System.err.println(e.getMessage());
           //mensaje="error en la base de datos";

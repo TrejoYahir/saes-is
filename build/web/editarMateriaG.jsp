@@ -80,7 +80,7 @@
                 <main class="main col align-items-center justify-content-center main">
                     <%
                         Conexion cx=new Conexion();
-                            Connection con =cx.MySQLConnect();
+                        Connection con =cx.MySQLConnect();
                         PreparedStatement ps, psa = null;
                         try {
                             String sql = "SELECT * FROM materias" + select;
@@ -146,6 +146,8 @@
                     <p>ID de materia inválido</p>
                      <%
                         }
+                        con.close();
+                                                                                cx.cerrar();
                         } catch (SQLException sqe) {
                             out.println(sqe);
                         }

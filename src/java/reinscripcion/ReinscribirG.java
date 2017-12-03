@@ -10,7 +10,10 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +47,12 @@ public class ReinscribirG extends HttpServlet {
             
             
             if(materiaCursada(request)){
+                try {
+                    con.close();
+                    cx.cerrar();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ReinscribirG.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 out.println("<script>alert('Alguna materia ya ha sido cursada'); location='editarHorarioAlumnoG.jsp?id="+idUsuario+"';</script>");
             }else{
                 int contador=Integer.parseInt(request.getParameter("contador"));
@@ -58,6 +67,8 @@ public class ReinscribirG extends HttpServlet {
                         ps.executeUpdate();
     //                    out.println("<p>id materia: "+materias.get(i)+"</p>");
                     }
+                    con.close();
+                    cx.cerrar();
                     out.println("<script>alert('Se completo con éxito la reinscripcion'); location='editarHorarioAlumnoG.jsp?id="+idUsuario+"';</script>");
     //                out.println("<!DOCTYPE html>");
     //                out.println("<html>");
@@ -71,7 +82,7 @@ public class ReinscribirG extends HttpServlet {
     //                out.println("</body>");
     //                out.println("</html>");
                 } catch (Exception e) {
-                    out.println("<script>alert('No se pudo registrar el horario');</script>");
+                    out.println("<script>alert('No se pudo registrar el horario'); </script>");
                     e.printStackTrace();
                 }
             }
@@ -158,8 +169,8 @@ public class ReinscribirG extends HttpServlet {
                 }
                 
             }
-            
-            
+            con.close();
+            cx.cerrar();
         }catch(Exception e){
             System.out.println("Algo sale mal con la validacion");
             e.printStackTrace();
@@ -185,6 +196,8 @@ public class ReinscribirG extends HttpServlet {
             }else{
                 cve = "NOEXISTE";
             }
+            con.close();
+            cx.cerrar();
         }catch(Exception e){
             
         }

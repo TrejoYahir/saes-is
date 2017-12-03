@@ -143,6 +143,8 @@ public class BuscarClaseR extends HttpServlet {
             }else{
                 out.println("No se han encontrado resultados");
             }
+            con.close();
+            cx.cerrar();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

@@ -222,10 +222,13 @@
                                                                                     <p>No se encontraron resultados</p>  
                                                                                   <%
                                                                                 }
+                                                                                con.close();
+                                                                                cx.cerrar();
                                                                             } catch (Exception e) {
                                                                                 e.printStackTrace();
                                                                             }
                                                                             %>
+                                                                            
                                                                         </tbody>
 								</table>
 							</div>

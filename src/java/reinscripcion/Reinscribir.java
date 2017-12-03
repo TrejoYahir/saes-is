@@ -53,6 +53,8 @@ public class Reinscribir extends HttpServlet {
                     ps.executeUpdate();
 //                    out.println("<p>id materia: "+materias.get(i)+"</p>");
                 }
+                con.close();
+                cx.cerrar();
                 out.println("<script>alert('Se concluyó la inscripción correctamente'); location='horarioActual.jsp';</script>");
 //                out.println("<!DOCTYPE html>");
 //                out.println("<html>");
@@ -66,7 +68,7 @@ public class Reinscribir extends HttpServlet {
 //                out.println("</body>");
 //                out.println("</html>");
             } catch (Exception e) {
-                out.println("<script>alert('No se pudo registrar el horario');</script>");
+                out.println("<script>alert('No se pudo registrar el horario'); location='reinscripcion.jsp'</script>");
                 e.printStackTrace();
             }
         }

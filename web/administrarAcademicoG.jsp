@@ -146,6 +146,8 @@
                         <p>No se encontraron resultados</p>
                          <%
                             }
+                            con.close();
+                            cx.cerrar();
                             } catch (SQLException sqe) {
                                 out.println(sqe);
                             }

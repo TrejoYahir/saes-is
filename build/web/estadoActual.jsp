@@ -23,11 +23,6 @@
                 int calificacion,reprobadas=0,numMaterias=0;
                 float calTotal=0,calPromedio;
                 float creditos,creditosF,creditosTotal=0,creditosP,creditosESCOM=239.20f;
-                String db="heroku_06209a6566df5df";
-                String dbcontra="b0087e4ae1fe04";
-                String dbuser="eac1da17";
-                String myDriver = "com.mysql.jdbc.Driver";
-                String myUrl = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_06209a6566df5df";
                 try{
                     Conexion cx=new Conexion();
                     Connection conn =cx.MySQLConnect();
@@ -181,6 +176,7 @@
                                                                             <%
                                                                             st.close();
                                                                             conn.close();
+                                                                            cx.cerrar();
                                                                         }catch (Exception e){
                                                                             System.err.println("Got an exception! ");
                                                                             System.err.println(e.getMessage());

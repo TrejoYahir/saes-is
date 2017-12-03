@@ -375,6 +375,8 @@
                                                         <%
                                                     }
                                                 }
+                                                con.close();
+                                                                                cx.cerrar();
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }

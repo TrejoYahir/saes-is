@@ -66,6 +66,8 @@ public class ValidarHorario extends HttpServlet {
                 }else{
                     out.print("mal");
                 }
+                con.close();
+                cx.cerrar();
             } catch (Exception e) {
                 e.printStackTrace();
             }
